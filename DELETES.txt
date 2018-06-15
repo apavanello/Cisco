@@ -1,0 +1,20 @@
+no object-group network DEST-LAN
+no object-group network RFC1918
+no object-group network SRC-LAN
+
+
+interface GigabitEthernet0/1
+no  crypto map 
+exit
+
+no crypto isakmp key VPN-LOJA1 address 177.200.0.4
+no crypto isakmp key VPN-LOJA2 address 178.111.2.3
+no crypto isakmp key VPN-LOJA3 address 200.1.4.12
+
+no crypto ipsec transform-set LOJA-1-PHASE2
+no crypto ipsec transform-set LOJA-2-PHASE2
+no crypto ipsec transform-set LOJA-3-PHASE2
+
+no crypto isakmp policy 2
+
+end 
